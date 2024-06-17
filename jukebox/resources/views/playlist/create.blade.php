@@ -9,5 +9,8 @@
         {{$message}}
     @enderror
     <input type="submit">
+    <nav>
+        <a href="index">back to the index page</a>
+    </nav>
 </form>
 @endsection

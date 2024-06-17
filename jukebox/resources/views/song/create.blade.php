@@ -24,5 +24,8 @@
         {{$message}}
     @enderror
     <input type="submit">
+    <nav>
+        <a href="index">create a new song</a>
+    </nav>
 </form>
 @endsection

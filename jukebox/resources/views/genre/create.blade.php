@@ -11,5 +11,8 @@
         <p>{{$message}}</p>
     @enderror
     <input type="submit">
+    <nav>
+        <a href="genre_index">back to the index page</a>
+    </nav>
 </form>
 @endsection

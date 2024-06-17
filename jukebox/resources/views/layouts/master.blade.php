@@ -14,6 +14,7 @@
             <li><a href="/song/index">song</a></li>
             <li><a href="/playlist/index">playlist</a></li>
         </ul>
+    </nav>
     <h1>dit is de content van de master pagina</h1>
     @yield("content")
     <h1>Hello from the master page</h1>

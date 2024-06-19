@@ -14,6 +14,7 @@
     </ul>
     <nav>
         <a href="create">create a new playlist</a>
+        <a href="show">edit playlist</a>
     </nav>
 @endsection
 

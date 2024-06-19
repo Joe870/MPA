@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\playlist;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
@@ -12,8 +13,9 @@ class PlaylistController extends Controller
      */
     public function index()
     {
-        $playlist = Playlist::all();
-        return view("playlist.index", ["playlist"=>$playlist]);
+        $playlist = Playlist::with('songs')->get();
+        $songs = Song::all();
+        return view("playlist.index", compact("playlist", "songs"));
     }
 
     /**
@@ -41,7 +43,8 @@ class PlaylistController extends Controller
      */
     public function show(playlist $playlist)
     {
-        //
+        $songs = Song::all();
+        return view("playlist.show", ["playlist" => $playlist, "songs" => $songs]);
     }
 
     /**
@@ -49,7 +52,7 @@ class PlaylistController extends Controller
      */
     public function edit(playlist $playlist)
     {
-        //
+        
     }
 
     /**
@@ -57,14 +60,22 @@ class PlaylistController extends Controller
      */
     public function update(Request $request, playlist $playlist)
     {
-        //
+
     }
 
     /**
+     * 
      * Remove the specified resource from storage.
      */
     public function destroy(playlist $playlist)
     {
-        //
+
+    }
+
+    public function addSongToPlaylist(Request $request, playlist $playlist)
+    {
+        $song = $request->get("selectedSong");
+        $playlist->songs()->attach($song);
+        return redirect()->back();
     }
 }

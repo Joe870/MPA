@@ -78,4 +78,11 @@ class PlaylistController extends Controller
         $playlist->songs()->attach($song);
         return redirect()->back();
     }
+
+    // add song to playlist method
+        // request heeft id en de song in izch
+        // zoek de playlist op met de id
+        // en voeg de song eraan toe.
+        // save the playlist
+    
 }

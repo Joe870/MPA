@@ -15,9 +15,8 @@
             <li><a href="/playlist/index">playlist</a></li>
         </ul>
     </nav>
-    <h1>dit is de content van de master pagina</h1>
+
     @yield("content")
-    <h1>Hello from the master page</h1>
     <footer>
         <p>Author: Joëlle van Breugel<br>
         <a href="hrever@gmail.com">My e-mailadres: hrever@gmail.com</a></p>

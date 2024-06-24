@@ -1,7 +1,7 @@
 @extends("layouts.master")
 
 @section("content")
-    <h1>{{$song->name}}</h1>
+    <h1>{{$song->songName}}</h1>
     @foreach($song->playlists as $playlist)
         - {{$playlist -> name}}
         <br>
@@ -11,6 +11,7 @@
         @csrf
         <select name="selectedPlaylist">
             @foreach($playlists as $playlist)
+                <p>add the above song to the selected playlist</p>
                 <option value="{{$playlist->id}}">{{$playlist->name}}</option>
             @endforeach
         </select>

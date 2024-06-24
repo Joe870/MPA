@@ -20,7 +20,7 @@ Route::get('/song/create', [SongController::class, "create"]);
 Route::post('/song/store', [SongController::class, "store"])->name("song.store");
 Route::get('/song/index', [SongController::class, "index"]);
 Route::get('/song/show/{song}', [SongController::class, "show"]);
-Route::post('/song/show/{song}', [SongController::class, "addPlaylistToSong"]);
+Route::post('/song/addplaylist/{song}', [SongController::class, "addPlaylistToSong"]);
 
 Route::get('/playlist/index', [PlaylistController::class, "index"]);
 Route::get('/playlist/create', [PlaylistController::class, "create"]);

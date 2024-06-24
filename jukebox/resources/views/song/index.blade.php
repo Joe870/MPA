@@ -5,8 +5,9 @@
         <h1>Dit is de songpagina</h1>
         <ul>
             @foreach ($songs as $song)
-                <li>song name: {{$song -> songName}}</li>
-                <!-- <button type="button" id="detailknop">klik hier voor songdetails</button> -->
+                <li >
+                    <a href="{{ route('song.detail', $song->id) }}">Song Name: {{ $song->songName }}</a>
+                </li>
             @endforeach
         </ul>
         <nav>

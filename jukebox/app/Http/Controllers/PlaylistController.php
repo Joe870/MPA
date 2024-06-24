@@ -52,7 +52,7 @@ class PlaylistController extends Controller
      */
     public function edit(playlist $playlist)
     {
-        
+        //
     }
 
     /**
@@ -60,7 +60,7 @@ class PlaylistController extends Controller
      */
     public function update(Request $request, playlist $playlist)
     {
-
+        //
     }
 
     /**
@@ -69,7 +69,7 @@ class PlaylistController extends Controller
      */
     public function destroy(playlist $playlist)
     {
-
+        //
     }
 
     public function addSongToPlaylist(Request $request, playlist $playlist)

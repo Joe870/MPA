@@ -7,7 +7,7 @@
         <br>
     @endforeach
 
-    <form action="/playlist/addplaylist/{{$song->id}}" method="POST">
+    <form action="/song/addplaylist/{{$song->id}}" method="POST">
         @csrf
         <select name="selectedPlaylist">
             @foreach($playlists as $playlist)

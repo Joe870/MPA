@@ -18,6 +18,11 @@ class SongController extends Controller
         return view("song.index", ["songs" => $song,"playlists" => $playlists]);
     }
 
+    public function detail($id)
+    {
+        $song = Song::findOrFail($id);
+        return view('song.detail', compact('song'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -76,7 +81,7 @@ class SongController extends Controller
     public function addPlaylistToSong(Request $request, Song $song)
     {
         $playlist = $request->get("selectedPlaylist");
-        $song->playlist()->attach($song);
+        $song->playlists()->attach($song);
         return redirect()->back();
     }
 }

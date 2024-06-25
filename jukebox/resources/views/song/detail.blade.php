@@ -10,6 +10,7 @@
             <li><strong>Artist name:</strong> {{ $song->artist_name }}</li>
         </ul>
         <nav>
+            <a href="{{ route('song.show', $song->id) }}">add song to playlist</a>
             <a href="index">back to the index page</a>
         </nav>
     </div>

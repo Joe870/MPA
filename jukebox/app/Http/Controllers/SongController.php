@@ -51,7 +51,9 @@ class SongController extends Controller
     public function show(Song $song)
     {
         $playlists = playlist::all();
-        return view("song.show", ["song" => $song, "playlists" => $playlists]);
+        $song = Song::findOrFail($id);
+        return view('song.show', compact('song'));
+        // return view("song.show", ["song" => $song, "playlists" => $playlists]);
     }
 
     /**

@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class SongController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $song = Song::with('playlists')->get();
@@ -51,8 +48,8 @@ class SongController extends Controller
     public function show(Song $song)
     {
         $playlists = playlist::all();
-        $song = Song::findOrFail($id);
-        return view('song.show', compact('song'));
+        // $song = Song::findOrFail($id);
+        return view('song.show', compact('song', 'playlists'));
         // return view("song.show", ["song" => $song, "playlists" => $playlists]);
     }
 

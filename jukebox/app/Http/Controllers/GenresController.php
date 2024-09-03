@@ -13,12 +13,19 @@ class GenresController extends Controller
     public function index()
     {
         $genres = Genres::all();
-        return view("genre.genreIndex", ["genres"=>$genres]);
+        return view("genre.genreIndex", ["genres" => $genres]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
+    public function detail()
+    {
+        $genres = Genres::with('songs')->get();
+        $songs = Song::all();
+        return view("genre.detail", ["genres" => $genres, "songs" => $songs]);
+    }
+
     public function create()
     {
         return view("genre.create");

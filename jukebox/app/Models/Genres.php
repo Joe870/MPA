@@ -10,7 +10,11 @@ class Genres extends Model
     use HasFactory;
     protected $fillable = ["name"];
 
-    public function genres(){
-        return $this->hasMany(Genres::class);
+    public function songs(){
+        return $this->hasMany(Song::class);
+    }
+    
+    public function genre(){
+        return $this->belongsTo(Genres::class);
     }
 }

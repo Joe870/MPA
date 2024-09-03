@@ -13,6 +13,10 @@ class Song extends Model
     public function playlists(){
         return $this->belongsToMany(Playlist::class);
     }
+
+    public function genre(){
+        return $this->belongsTo(Genres::class);
+    }
 }
 
 

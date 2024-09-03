@@ -10,7 +10,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/genre/genre_index">genre</a></li>
+            <li><a href="/genre/genreIndex">genre</a></li>
             <li><a href="/song/index">song</a></li>
             <li><a href="/playlist/index">playlist</a></li>
         </ul>

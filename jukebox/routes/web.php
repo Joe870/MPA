@@ -10,16 +10,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/hello', [Welcome::class, "hello"]);
 
-Route::get('/genre/genre_index', [GenresController::class, "index"]);
+Route::get('/genre/genreIndex', [GenresController::class, "index"]);
 Route::get('/genre/create', [GenresController::class, "create"]);
 Route::post('/genre/store', [GenresController::class, "store"])->name("genre.store");
+Route::get('/genre/detail', [GenresController::class, "detail"])->name("genre.detail");
 
 Route::get('/song/create', [SongController::class, "create"]);
 Route::post('/song/store', [SongController::class, "store"])->name("song.store");
 Route::get('/song/index', [SongController::class, "index"]);
-Route::get('/song/show/{song}', [SongController::class, "show"]);
+Route::get('/song/show/{song}', [SongController::class, "show"])->name("song.show");
 Route::post('/song/addplaylist/{song}', [SongController::class, "addPlaylistToSong"]);
 Route::get('/song/{id}', [SongController::class, "detail"])->name("song.detail");
 

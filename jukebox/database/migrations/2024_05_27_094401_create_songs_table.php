@@ -13,17 +13,13 @@ return new class extends Migration
     {
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
-            $table->string("songName");
-            $table->integer("durationLength");
+            $table->string('songName');
+            $table->integer('durationLength');
+            $table->string('artist_name');
+            $table->foreignId('genre_id');
             $table->timestamps();
-            $table->foreignId('genreId');
-            $table->string("artist_name");
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('songs');

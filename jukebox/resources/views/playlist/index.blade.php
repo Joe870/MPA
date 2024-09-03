@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section("content")
-    <h1>Dit is de playlistpagina</h1>
+    <h1>Hier zie je de playlist van {{Auth::user()->name}}</h1>
     <ul>
         @foreach ($playlist as $playlists)
             <li>playlist name: {{$playlists -> name}}</li>

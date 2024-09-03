@@ -2,12 +2,13 @@
 
 @section("content")
     <h1>Dit is de genrepagina</h1>
-    <ul>
+
         @foreach ($genres as $genre)
-            <li>{{$genre -> name}}</li>
-            <button type="button">liedjes die bij dit genre horen</button>
-        @endforeach 
-    </ul>
+            <li>
+                <a href="{{ route('genre.detail', $genre->id) }}">genre Name: {{ $genre->name }}</a>
+            </li>
+        @endforeach
+
     <nav>
         <a href="create">create a new genre</a>
     </nav>

@@ -79,8 +79,9 @@ class SongController extends Controller
 
     public function addPlaylistToSong(Request $request, Song $song)
     {
-        $playlist = $request->get("selectedPlaylist");
-        $song->playlists()->attach($song);
-        return redirect()->back();
+        $playlistId = $request->input("selectedPlaylist");
+        $playlist = Playlist::findOrFail($playlistId);
+        $playlist->songs()->attach($song->id);
+        return redirect()->back()->with('succes', 'Song added to playlist');
     }
 }

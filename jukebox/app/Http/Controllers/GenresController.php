@@ -19,11 +19,13 @@ class GenresController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function detail()
+    public function detail(Genres $genres)
     {
+        // return view("genre.detail", ["genre" => $genres]);
         $genres = Genres::with('songs')->get();
-        $songs = Song::all();
-        return view("genre.detail", ["genres" => $genres, "songs" => $songs]);
+        // dd($genres);
+        return view('genre.detail', compact('genres'));
+        // return view("genre.detail", ["genres" => $genres, "songs" => $songs]);
     }
 
     public function create()

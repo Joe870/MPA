@@ -2,7 +2,12 @@
 
 @section("content")
     <div id="container">
-        <h1>nummers die bij het genre hoort</h1>
+        <h1>Song that belong to this genre</h1>
         <ul>
-            <li>
+            <li><strong>genre Name:</strong> {{ $genres->name}}</li>
         </ul>
+        <nav>
+            <a href="index">back to the index page</a>
+        </nav>
+    </div>
+@endsection

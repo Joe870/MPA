@@ -8,10 +8,10 @@
     @endforeach
 
     <form action="/song/addplaylist/{{$song->id}}" method="POST">
+    <p>add the above song to the selected playlist</p>
         @csrf
         <select name="selectedPlaylist">
             @foreach($playlists as $playlist)
-                <p>add the above song to the selected playlist</p>
                 <option value="{{$playlist->id}}">{{$playlist->name}}</option>
             @endforeach
         </select>

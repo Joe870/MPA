@@ -41,7 +41,7 @@ class PlaylistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(playlist $playlist)
+    public function detail(playlist $playlist)
     {
         $songs = Song::all();
         return view("playlist.show", ["playlist" => $playlist, "songs" => $songs]);
@@ -72,17 +72,11 @@ class PlaylistController extends Controller
         //
     }
 
-    public function addSongToPlaylist(Request $request, playlist $playlist)
+    public function addSongToPlaylist(Request $request, Playlist $playlist)
     {
-        $song = $request->get("selectedSong");
-        $playlist->songs()->attach($song);
-        return redirect()->back();
+        $songId = $request->input("selectedSong");
+        $song = Song::findOrFail($songId);
+        $song->playlists()->attach($playlist->id);
+        return redirect()->back()->with('success', 'Song added to playlist');
     }
-
-    // add song to playlist method
-        // request heeft id en de song in izch
-        // zoek de playlist op met de id
-        // en voeg de song eraan toe.
-        // save the playlist
-    
 }

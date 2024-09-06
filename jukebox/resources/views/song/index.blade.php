@@ -5,7 +5,7 @@
         <h1>Dit is de songpagina</h1>
         <ul>
             @foreach ($songs as $song)
-                <li >
+                <li>
                     <a href="{{ route('song.detail', $song->id) }}">Song Name: {{ $song->songName }} - Genre naam: {{ $song->genre->name}}</a>
                 </li>
             @endforeach

@@ -1,18 +1,19 @@
 @extends('layouts.master')
 
 @section("content")
-    <div id="container">
-        <h1>Song Details</h1>
-        <ul>
-            <li><strong>Playlist Name:</strong> {{ $playlist->name }}</li>
-        </ul>
-        <nav>
-            <a href="index">back to the index page</a>
-        </nav>
-    </div>
-@endsection
+    <h1>{{$playlist}}</h1> 
+    <form action="/playlist/addsong/{{$playlist->id}}" method="POST">
 
-@push('js')
-    <script>
-    </script>
-@endpush
+        @csrf 
+        <select name="selectedSong">
+            @foreach($songs as $song)
+                <option value="{{$song->id}}">{{$playlist->name}}</option>
+            @endforeach 
+        </select>
+        <input type="submit" value="Send me!">
+    </form>
+    <nav>
+        <a href="index">back to the index page</a>
+    </nav>
+
+@endsection

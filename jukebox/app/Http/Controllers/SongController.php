@@ -36,10 +36,10 @@ class SongController extends Controller
         $request->validate([
             "songName" => "required|string",
             "durationLength" => "required|integer|min:0",
-            "genreId" => "required|integer|min:1",
+            "genre_id" => "required|integer|min:1",
             "artist_name" => "required|string"
         ]);
-        Song::create(["songName" => $request->songName,"durationLength" =>$request->durationLength, "genreId" =>$request->genreId, "artist_name" => $request->artist_name]); 
+        Song::create(["songName" => $request->songName,"durationLength" =>$request->durationLength, "genre_id" =>$request->genre_id, "artist_name" => $request->artist_name]); 
     }
 
     /**

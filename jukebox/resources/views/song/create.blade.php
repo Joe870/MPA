@@ -14,8 +14,8 @@
         {{$message}}
     @enderror
     <label for="genre_id">vul hier het genre_id in:</label>
-    <input type="text" name="genreId">
-    @error("genreId")
+    <input type="text" name="genre_id">
+    @error("genre_id")
         {{$message}}
     @enderror
     <label for="artist_name">vul hier de naam van de artiest in:</label>

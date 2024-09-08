@@ -23,7 +23,6 @@ class GenresController extends Controller
     {
         // return view("genre.detail", ["genre" => $genres]);
         $genres = Genres::with('songs')->get();
-        // dd($genres);
         return view('genre.detail', compact('genres'));
         // return view("genre.detail", ["genres" => $genres, "songs" => $songs]);
     }

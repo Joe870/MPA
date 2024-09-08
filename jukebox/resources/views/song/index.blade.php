@@ -12,7 +12,6 @@
         </ul>
         <nav>
             <a href="create">back to the create page</a>
-            <a href="show">add songs to playlist</a>
         </nav>
     </div>
 @endsection

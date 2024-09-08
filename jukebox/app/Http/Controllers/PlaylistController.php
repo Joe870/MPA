@@ -43,8 +43,9 @@ class PlaylistController extends Controller
      */
     public function detail(playlist $playlist)
     {
+        $playlist->load('songs');
         $songs = Song::all();
-        return view("playlist.show", ["playlist" => $playlist, "songs" => $songs]);
+        return view("playlist.detail", ["playlist" => $playlist, "songs" => $songs]);
     }
 
     /**

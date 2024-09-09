@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('songName');
             $table->integer('durationLength');
             $table->string('artist_name');
-            $table->foreignId('genre_id');
+            $table->foreignId('genres_id');
             $table->timestamps();
         });
     }

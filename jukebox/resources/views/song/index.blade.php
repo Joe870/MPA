@@ -6,7 +6,7 @@
         <ul>
             @foreach ($songs as $song)
                 <li>
-                    <a href="{{ route('song.detail', $song->id) }}">Song Name: {{ $song->songName }} - Genre naam: {{ $song->genre->name}}</a>
+                    <a href="{{ route('song.detail', $song->id) }}">Song Name: {{ $song->songName}}<a>
                 </li>
             @endforeach
         </ul>

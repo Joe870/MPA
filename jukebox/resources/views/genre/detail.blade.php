@@ -2,12 +2,12 @@
 
 @section("content")
     <div id="container">
-        <h1>Song that belong to this genre</h1>
+        <h1>Song(s) that belong to this genre</h1>
+        <h2>{{$genres->genreName}} :</h2>
         <ul>
-            <li><strong>genre Name:</strong> {{ $genres->name}}</li>
+            @foreach ($genres->songs as $song)
+                <li>{{$song->songName}}</li>
+            @endforeach
         </ul>
-        <nav>
-            <a href="index">back to the index page</a>
-        </nav>
     </div>
 @endsection

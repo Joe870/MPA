@@ -11,10 +11,7 @@ class Genres extends Model
     protected $fillable = ["name"];
 
     public function songs(){
-        return $this->hasMany(Song::class, 'genre_id');
-    }
-    
-    public function genre(){
-        return $this->belongsTo(Genres::class);
+        return $this->hasMany(Song::class);
+        // return $this->hasMany(Song::class, 'genre_id');
     }
 }

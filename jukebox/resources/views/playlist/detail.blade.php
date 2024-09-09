@@ -11,7 +11,7 @@
         @csrf 
         <select name="selectedSong">
             @foreach($songs as $song)
-                <option value="{{$song->id}}">{{$song->name}}</option>
+                <option value="{{$song->id}}">{{$song->songName}}</option>
             @endforeach 
         </select>
         <input type="submit" value="Send me!">

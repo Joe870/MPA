@@ -6,7 +6,7 @@
         <ul>
             <li><strong>Song Name:</strong> {{ $song->songName }}</li>
             <li><strong>Duration length:</strong> {{ $song->durationLength }}</li>
-            <li><strong>Genre Id:</strong> {{ $song->genre_id }}</li>
+            <li><strong>Genre Id:</strong> {{ $song->genres_id }}</li>
             <li><strong>Artist name:</strong> {{ $song->artist_name }}</li>
         </ul>
         <nav>

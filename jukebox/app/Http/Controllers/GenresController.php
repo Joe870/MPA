@@ -22,7 +22,7 @@ class GenresController extends Controller
     public function detail(Genres $genres)
     {
         $genres->load('Songs');
-        dd($genres);
+        // dd($genres);
         return view('genre.detail', compact('genres'));
     }
 

@@ -45,7 +45,8 @@ class PlaylistController extends Controller
     {
         $playlist->load('songs');
         $songs = Song::all();
-        return view("playlist.detail", ["playlist" => $playlist, "songs" => $songs]);
+        $totalplaylistduration = $playlist->songs->sum('durationLength');
+        return view("playlist.detail", ["playlist" => $playlist, "songs" => $songs, "totalplaylistduration" => $totalplaylistduration]);
     }
 
     /**

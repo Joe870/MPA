@@ -16,6 +16,7 @@
         </select>
         <input type="submit" value="Send me!">
     </form>
+    <p>Total Playtime: {{$totalplaylistduration}}</p>
     <nav>
         <a href="index">back to the index page</a>
     </nav>

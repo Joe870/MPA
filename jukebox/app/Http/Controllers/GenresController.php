@@ -22,7 +22,8 @@ class GenresController extends Controller
     public function detail(Genres $genres)
     {
         $genres->load('Songs');
-        // dd($genres);
+        //select vanuit song waar genre id gelijk is aan geselecteerd genre
+        //dd($genres);
         return view('genre.detail', compact('genres'));
     }
 

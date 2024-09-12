@@ -31,7 +31,7 @@ Route::get('/hello', [Welcome::class, "hello"]);
 Route::get('/genre/genreIndex', [GenresController::class, "index"]);
 Route::get('/genre/create', [GenresController::class, "create"]);
 Route::post('/genre/store', [GenresController::class, "store"])->name("genre.store");
-Route::get('/genre/detail/{genre}', [GenresController::class, "detail"])->name("genre.detail");
+Route::get('/genre/detail/{genres_id}', [GenresController::class, "detail"])->name("genre.detail");
 
 Route::get('/song/create', [SongController::class, "create"]);
 Route::post('/song/store', [SongController::class, "store"])->name("song.store");

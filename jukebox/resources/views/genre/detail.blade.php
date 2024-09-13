@@ -3,9 +3,9 @@
 @section("content")
     <div id="container">
         <h1>Song(s) that belong to this genre</h1>
-        <h2>{{$genres->genreName}} :</h2>
+        <h2>{{$genre->name}} :</h2>
         <ul>
-            @foreach ($genres->songs as $song)
+            @foreach($genre->songs as $song)
                 <li>{{$song->songName}}</li>
             @endforeach
         </ul>

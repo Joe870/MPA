@@ -13,8 +13,8 @@
     @error("duration")
         {{$message}}
     @enderror
-    <label for="genre_id">vul hier het genre_id in:</label>
-    <input type="text" name="genre_id">
+    <label for="genres_id">vul hier het genre_id in:</label>
+    <input type="text" name="genres_id">
     @error("genre_id")
         {{$message}}
     @enderror

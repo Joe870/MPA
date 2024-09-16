@@ -17,10 +17,12 @@
     </nav>
 
     @yield("content")
+    
     <footer>
         <p>Author: Joëlle van Breugel<br>
         <a href="hrever@gmail.com">My e-mailadres: hrever@gmail.com</a></p>
     </footer>
+
     @stack('js')
 </body>
 </html>

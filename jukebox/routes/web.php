@@ -46,3 +46,4 @@ Route::post('/playlist/store', [PlaylistController::class, "store"]) ->name("pla
 Route::get('/playlist/show/{playlist}', [PlaylistController::class, "show"]);
 Route::post('/playlist/addsong/{playlist}', [PlaylistController::class, "addSongToPlaylist"]);
 Route::get('/playlist/detail/{playlist}', [PlaylistController::class, "detail"]) ->name("playlist.detail");
+

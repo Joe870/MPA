@@ -66,10 +66,10 @@ class PlaylistController extends Controller
         $request->validate([
             "name" => "required|string"
         ]);
-        $playlist = playlist::find($id);
+        $playlist = playlist::findOrFail($id);
         $playlist->name = $request->input('name');
         $playlist->save();
-        return redirect()->route('playlist.index')->with('sucess', 'playlist updated succesfully');
+        return redirect()->route('playlist.index')->with('success', 'playlist updated succesfully');
     }
 
     /**
@@ -87,5 +87,13 @@ class PlaylistController extends Controller
         $song = Song::findOrFail($songId);
         $song->playlists()->attach($playlist->id);
         return redirect()->back()->with('success', 'Song added to playlist');
+    }
+
+    public function deleteSongFromPlaylist(Request $request, Playlist $playlist)
+    {
+        $songId = $request->input("SelectedDeleteSong");
+        $song = Song::findOrFail($songId);
+        $song->playlists()->detach($playlist->id);
+        return redirect()->back()->with('success', 'song deleted from playlist');
     }
 }

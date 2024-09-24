@@ -41,12 +41,12 @@ Route::post('/song/addplaylist/{song}', [SongController::class, "addPlaylistToSo
 Route::get('/song/{id}', [SongController::class, "detail"])->name("song.detail");
 Route::get('/song/addtotemplaylist/{song}', [SongController::class, "addtotemplaylist"])->name("addtotemplaylist");
 
-Route::get('/playlist/index', [PlaylistController::class, "index"]);
+Route::get('/playlist/index', [PlaylistController::class, "index"])->name('playlist.index');
 Route::get('/playlist/create', [PlaylistController::class, "create"]);
 Route::post('/playlist/store', [PlaylistController::class, "store"]) ->name("playlist.store");
 Route::get('/playlist/show/{playlist}', [PlaylistController::class, "show"]);
 Route::post('/playlist/addsong/{playlist}', [PlaylistController::class, "addSongToPlaylist"]);
 Route::get('/playlist/detail/{playlist}', [PlaylistController::class, "detail"]) ->name("playlist.detail");
 Route::get('/playlist/edit/{playlist}', [PlaylistController::class, "edit"]) ->name("playlist.edit");
-Route::post('playlist/update/{playlist}', [PlaylistController::class, "update"]) ->name("playlist.update");
-
+Route::put('/playlist/{id}', [PlaylistController::class, 'update'])->name('playlist.update');
+Route::post('/playlist/deletesong/{playlist}', [PlaylistController::class, "deleteSongFromPlaylist"]);

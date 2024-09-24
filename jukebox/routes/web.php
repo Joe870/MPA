@@ -39,6 +39,7 @@ Route::get('/song/index', [SongController::class, "index"]);
 Route::get('/song/show/{song}', [SongController::class, "show"])->name("song.show");
 Route::post('/song/addplaylist/{song}', [SongController::class, "addPlaylistToSong"]);
 Route::get('/song/{id}', [SongController::class, "detail"])->name("song.detail");
+Route::get('/song/addtotemplaylist/{song}', [SongController::class, "addtotemplaylist"])->name("addtotemplaylist");
 
 Route::get('/playlist/index', [PlaylistController::class, "index"]);
 Route::get('/playlist/create', [PlaylistController::class, "create"]);
@@ -46,4 +47,6 @@ Route::post('/playlist/store', [PlaylistController::class, "store"]) ->name("pla
 Route::get('/playlist/show/{playlist}', [PlaylistController::class, "show"]);
 Route::post('/playlist/addsong/{playlist}', [PlaylistController::class, "addSongToPlaylist"]);
 Route::get('/playlist/detail/{playlist}', [PlaylistController::class, "detail"]) ->name("playlist.detail");
+Route::get('/playlist/edit/{playlist}', [PlaylistController::class, "edit"]) ->name("playlist.edit");
+Route::post('playlist/update/{playlist}', [PlaylistController::class, "update"]) ->name("playlist.update");
 

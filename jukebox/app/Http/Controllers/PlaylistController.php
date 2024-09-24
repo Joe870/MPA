@@ -52,17 +52,24 @@ class PlaylistController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(playlist $playlist)
+    public function edit($id)
     {
-        //
+        $playlist = playlist::find($id);
+        return view("playlist.edit", ["playlist" => $playlist]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, playlist $playlist)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            "name" => "required|string"
+        ]);
+        $playlist = playlist::find($id);
+        $playlist->name = $request->input('name');
+        $playlist->save();
+        return redirect()->route('playlist.index')->with('sucess', 'playlist updated succesfully');
     }
 
     /**

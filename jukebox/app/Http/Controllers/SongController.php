@@ -82,4 +82,12 @@ class SongController extends Controller
         $playlist->songs()->attach($song->id);
         return redirect()->back()->with('succes', 'Song added to playlist');
     }
+
+    public function addtotemplaylist(Song $song)
+    {
+        if(!session()->has("tempSongs"))
+            session()->put("tempSongs", []);
+        session()->push("tempSongs", $song->id);
+        return redirect()->back();
+    }
 }

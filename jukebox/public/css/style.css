@@ -14,3 +14,12 @@ ul{
     list-style-type:none;
     text-align:inherit;
 }
+
+.btn-primary {
+    background-color: #337ab7;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

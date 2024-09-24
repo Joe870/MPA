@@ -18,7 +18,7 @@
     </form>
     <p>Total Playtime: {{$totalplaylistduration}}</p>
     <nav>
-        <a href="index">back to the index page</a>
+        <a href="{{ route('playlist.edit', $playlist->id)}}">edit hier deze playlist</a>
     </nav>
 
 @endsection

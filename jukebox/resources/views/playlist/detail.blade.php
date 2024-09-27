@@ -8,7 +8,7 @@
             @csrf
             <select name="SelectedDeleteSong">
             <option value="{{$song->id}}">{{$song->songName}}</option>
-            <input type="submit" value="delete me from playlist!">
+            <input type="submit" value="delete me from this playlist!">
             <br>
         </form>
     @endforeach
@@ -21,7 +21,7 @@
                 <option value="{{$song->id}}">{{$song->songName}}</option>
             @endforeach 
         </select>
-        <input type="submit" value="add me to playlist!">
+        <input type="submit" value="add me to thisplaylist!">
     </form>
     <p>Total Playtime: {{$totalplaylistduration}}</p>
     <nav>

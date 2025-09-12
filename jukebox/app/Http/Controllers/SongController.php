@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\playlist;
 use App\Models\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SongController extends Controller
 {
@@ -88,6 +89,28 @@ class SongController extends Controller
         if(!session()->has("tempSongs"))
             session()->put("tempSongs", []);
         session()->push("tempSongs", $song->id);
+        return redirect()->back();
+    }
+
+    public function turnTemptoPerm()
+    {
+        if(Auth::check())
+        {
+            $user = Auth::user(); 
+        }
+        $templaylist = session()->get('tempSongs');
+        if(!empty($tempplaylist) && Auth::check())
+        dd($templaylist);
+        {
+            $playlist = Playlist::create([
+                'name' => 'new_playlist',
+            ]);
+            foreach ($templaylist as $song) 
+            {
+                $playlist->songs()->attach($song);
+            }
+            session()->forget("tempSongs");
+        }
         return redirect()->back();
     }
 }

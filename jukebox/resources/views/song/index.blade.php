@@ -14,6 +14,7 @@
                 </li>
             @endforeach
         </ul>
+        <a href="{{ route('turnTemptoPerm', $song->id) }}">Verander de tempory playlist in een permanent playlist (kan alleen als je bent ingelogt)</a>
         <nav>
             <a href="create">back to the create page</a>
         </nav>

@@ -1,14 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GenresController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\Welcome;
-use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -40,6 +37,7 @@ Route::get('/song/show/{song}', [SongController::class, "show"])->name("song.sho
 Route::post('/song/addplaylist/{song}', [SongController::class, "addPlaylistToSong"]);
 Route::get('/song/{id}', [SongController::class, "detail"])->name("song.detail");
 Route::get('/song/addtotemplaylist/{song}', [SongController::class, "addtotemplaylist"])->name("addtotemplaylist");
+Route::get('/song/turnTemptoPerm/{song}', [SongController::class, "turnTemptoPerm"])->name("turnTemptoPerm");
 
 Route::get('/playlist/index', [PlaylistController::class, "index"])->name('playlist.index');
 Route::get('/playlist/create', [PlaylistController::class, "create"]);
